@@ -1,16 +1,16 @@
 import React from "react";
 
-export const P2: React.FC = (): JSX.Element => {
+export const ClosePath: React.FC = (): JSX.Element => {
   const canvasRef = React.useRef(null);
 
   React.useEffect(() => {
     const canvasObj: any = canvasRef.current;
     const ctx = canvasObj.getContext("2d");
     ctx.beginPath();
-    ctx.moveTo(20, 20);
-    ctx.lineTo(120, 20);
-    ctx.lineTo(120, 120);
-    ctx.lineTo(20, 120);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(100, 0);
+    ctx.lineTo(100, 100);
+    ctx.lineTo(0, 100);
     ctx.closePath();
     ctx.stroke();
   });
@@ -21,5 +21,3 @@ export const P2: React.FC = (): JSX.Element => {
     </main>
   );
 };
-
-export default P2;
