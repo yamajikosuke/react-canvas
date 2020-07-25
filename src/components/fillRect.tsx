@@ -1,12 +1,14 @@
 import React from "react";
 
 export const FillRect: React.FC = (): JSX.Element => {
-  const canvasRef = React.useRef(null);
+  const canvasRef = React.useRef<HTMLCanvasElement>(null);
 
   React.useEffect(() => {
-    const canvasObj: any = canvasRef.current;
-    const ctx = canvasObj.getContext("2d");
-    ctx.fillRect(0, 0, 100, 100);
+    const canvasObj = canvasRef.current;
+    if (canvasObj) {
+      const ctx = canvasObj.getContext("2d");
+      if (ctx) ctx.fillRect(0, 0, 100, 100);
+    }
   });
 
   return (
